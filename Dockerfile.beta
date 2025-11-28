@@ -12,7 +12,7 @@ WORKDIR /root/git/ghidra/
 RUN echo "[+] Downloading dependencies..." \
     && gradle --parallel --init-script gradle/support/fetchDependencies.gradle
 
-COPY ghidra/* /root/git/ghidra/Ghidra/Processors/Xtensa/
+COPY ghidra/* /root/git/ghidra/Ghidra/Processors/Xtensa/data/languages/
 
 RUN echo "[+] Building Ghidra..." \
     && gradle buildNatives_linux64 \
